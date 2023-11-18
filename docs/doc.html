@@ -9,8 +9,6 @@
     <script src="../luss.js"></script>
     <title>LUSS Documention</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/dark.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script defer>hljs.highlightAll();</script>
     <meta name="description" content="LUSS Framework Documentation">
     <meta name="keywords" content="frontend, FrontEnd, front-end, js, javascript, JavaScript, CSS, css, css3, css-framework">
     <meta name="author" content="Sanalzio">
@@ -131,6 +129,7 @@ p{
 p{
     color: (</span><span class="hljs-string">"$color-scheme"</span> == <span class="hljs-string">"light"</span> ? <span class="hljs-string">"black"</span> : <span class="hljs-string">"white"</span>);
 }</code></pre>
+<p><strong>Usage</strong>: <code>(&lt;condition&gt; ? &lt;if condition true reutrn this&gt; : &lt;else return this&gt;)</code></p>
 <h3 id="get-style">get style</h3>
 <pre><code class="lang-css"><span class="hljs-selector-tag">p</span>{
     <span class="hljs-attribute">color</span>: gs$ <span class="hljs-number">#d</span>iv1 (color);
@@ -143,7 +142,6 @@ p{
 <pre><code class="lang-css"><span class="hljs-selector-tag">body</span> {
     <span class="hljs-attribute">color</span>: #<span class="hljs-built_in">rgb</span>(255, 0, 0);
 }</code></pre>
-<p><strong>Usage</strong>: <code>(&lt;condition&gt; ? &lt;if condition true reutrn this&gt; : &lt;else return this&gt;)</code></p>
 <h3 id="each">each</h3>
 <pre><code class="lang-css">$tags: h1:hover | p
 each($<span class="hljs-class">tags </span>{
