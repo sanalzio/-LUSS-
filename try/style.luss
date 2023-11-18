@@ -1,0 +1,8 @@
+$warning: orange
+$den: h1 | p
+html{
+    color-scheme: dark;
+}
+each($den {
+    color: $warning
+})

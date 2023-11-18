@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="./github-markdown-dark.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="../luss.js"></script>
+    <title>LUSS Documention</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script defer>hljs.highlightAll();</script>
+</head>
+<body>
+<div id="cakmabody">
+<div id="navplaceholder">
+    <div id="nav" class="markdown-body" style="color-scheme: dark; color:#8a2be2; background-color: #161616;position: fixed;">
+        <ul>
+            <li><a href="#luss" style="text-decoration: none;font-weight: 600;color:#8a2be2;">{LUSS}</a><ul>
+            <li><a href="#-author" style="text-decoration: none;font-weight: 600;color:#8a2be2;">💻 Author</a></li>
+            <li><a href="#-description" style="text-decoration: none;font-weight: 600;color:#8a2be2;">💬 Description</a></li>
+            <li><a href="#-table-of-contents" style="text-decoration: none;font-weight: 600;color:#8a2be2;">📋 Table of Contents</a></li>
+            <li><a href="#-installation" style="text-decoration: none;font-weight: 600;color:#8a2be2;">✔ Installation</a></li>
+            <li><a href="#-usage" style="text-decoration: none;font-weight: 600;color:#8a2be2;">🚀 Usage</a></li>
+            <li><a href="#-functions" style="text-decoration: none;font-weight: 600;color:#8a2be2;">✨ Functions</a><ul>
+            <li><a href="#variable-assignment" style="text-decoration: none;font-weight: 600;color:#8a2be2;">Variable assignment</a></li>
+            <li><a href="#math" style="text-decoration: none;font-weight: 600;color:#8a2be2;">Math</a></li>
+            <li><a href="#random-integer" style="text-decoration: none;font-weight: 600;color:#8a2be2;">random integer</a></li>
+            <li><a href="#date" style="text-decoration: none;font-weight: 600;color:#8a2be2;">date</a></li>
+            <li><a href="#if" style="text-decoration: none;font-weight: 600;color:#8a2be2;">if</a></li>
+            <li><a href="#else" style="text-decoration: none;font-weight: 600;color:#8a2be2;">else</a></li>
+            <li><a href="#js" style="text-decoration: none;font-weight: 600;color:#8a2be2;">js</a></li>
+            <li><a href="#inline-if" style="text-decoration: none;font-weight: 600;color:#8a2be2;">inline if</a></li>
+            <li><a href="#get-style" style="text-decoration: none;font-weight: 600;color:#8a2be2;">get style</a></li>
+            <li><a href="#random-color" style="text-decoration: none;font-weight: 600;color:#8a2be2;">random color</a></li>
+            <li><a href="#rgb-to-hex" style="text-decoration: none;font-weight: 600;color:#8a2be2;">rgb to hex</a></li>
+            <li><a href="#each" style="text-decoration: none;font-weight: 600;color:#8a2be2;">each</a></li>
+            <li><a href="#interval" style="text-decoration: none;font-weight: 600;color:#8a2be2;">interval</a></li>
+            <li><a href="#string-functions" style="text-decoration: none;font-weight: 600;color:#8a2be2;">String Functions</a><ul>
+            <li><a href="#upper-lower" style="text-decoration: none;font-weight: 600;color:#8a2be2;">upper, lower</a></li>
+            <li><a href="#escape" style="text-decoration: none;font-weight: 600;color:#8a2be2;">escape</a></li>
+            </ul>
+            </li>
+            </ul>
+            </li>
+            </ul>
+            </li>
+            </ul>
+    </div>
+</div>
+<div class="markdown-body" id="doc" style="color-scheme: light;color:azure;background-color: #282828;margin:auto;">
+<h1 id="-luss-" style="text-align: center;font-family: 'Source Code Pro', monospace;color:#8a2be2;font-size: 3em;">{LUSS}</h1>
+<h2 id="-author">💻 Author</h2>
+<p><a style="color: cornflowerblue;" href="https://sanalzio.github.io/"><strong>Sanalzio (me)</strong></a></p>
+<h2 id="-description">💬 Description</h2>
+<p>A CSS framework that enables you to easily organize the style of a web page.</p>
+<h2 id="-installation">✔ Installation</h2>
+<ul>
+<li>Paste this tag into the head tag in your html code:<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">defer</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/gh/sanalzio/-LUSS-@master/luss.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+</li>
+</ul>
+<h2 id="-usage">🚀 Usage</h2>
+<ul>
+<li>Create a new &quot;style&quot; tag in the following format and write the code inside it:<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"luss"</span>&gt;</span><span class="css">
+<span class="hljs-comment">/* Codes */</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
+</li>
+<li>Or, use the link tag in the following format to import an external file:<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"luss"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"./style.luss"</span>&gt;</span></code></pre>
+</li>
+</ul>
+<h2 id="-functions">✨ Functions</h2>
+<h3 id="variable-assignment">Variable assignment</h3>
+<pre><code class="lang-css">$text-<span class="hljs-keyword">color</span>: #f2f2f2
+$bg-<span class="hljs-keyword">color</span>: black
+
+body{
+    <span class="hljs-keyword">color</span>: $text-<span class="hljs-keyword">color</span>;
+    background: $bg-<span class="hljs-keyword">color</span>;
+}</code></pre>
+<h3 id="math">Math</h3>
+<pre><code class="lang-css"><span class="hljs-selector-tag">img</span> {
+    <span class="hljs-attribute">width</span>: $[<span class="hljs-number">1em</span> + <span class="hljs-number">2px</span>];
+}</code></pre>
+<h3 id="random-integer">random integer</h3>
+<pre><code class="lang-css"><span class="hljs-selector-tag">body</span>{
+    <span class="hljs-attribute">padding</span>: <span class="hljs-built_in">random</span>(1, 3)<span class="hljs-built_in">rem</span>;
+}</code></pre>
+<h3 id="date">date</h3>
+<pre><code class="lang-css"><span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">::after</span>{
+    <span class="hljs-attribute">content</span>: <span class="hljs-string">"date(day):date(month):date(year)"</span>;
+}
+<span class="hljs-selector-tag">article</span><span class="hljs-selector-pseudo">::after</span>{
+    <span class="hljs-attribute">content</span>: <span class="hljs-string">"date()"</span>;
+}</code></pre>
+<h3 id="if">if</h3>
+<pre><code class="lang-css">$<span class="hljs-keyword">color</span>-scheme: light
+@<span class="hljs-keyword">if</span> (<span class="hljs-string">"$color-scheme"</span>==<span class="hljs-string">"light"</span>)
+p{
+    <span class="hljs-keyword">color</span>: black<span class="hljs-comment">;</span>
+}
+<span class="hljs-keyword">end</span></code></pre>
+<blockquote class="markdown-alert markdown-alert-warning">
+<p><strong style="color: #d29922;">⚠ Warning</strong></p>
+<p>Each condition statement must be followed by &quot;end&quot; or &quot;###&quot; to avoid including other operations in the condition. And if using a string in a condition, enclose it in double quotes (&quot;&quot;).</p>
+</blockquote>
+<h3 id="else">else</h3>
+<pre><code class="lang-css">$<span class="hljs-keyword">color</span>-scheme: light
+@<span class="hljs-keyword">if</span> (<span class="hljs-string">"$color-scheme"</span>==<span class="hljs-string">"light"</span>)
+p{
+    <span class="hljs-keyword">color</span>: black<span class="hljs-comment">;</span>
+}
+@<span class="hljs-keyword">else</span>
+p{
+    <span class="hljs-keyword">color</span>: white<span class="hljs-comment">;</span>
+}
+<span class="hljs-keyword">end</span></code></pre>
+<h3 id="js">js</h3>
+<pre><code class="lang-css"><span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">::after</span>{
+    <span class="hljs-attribute">content</span>: <span class="hljs-string">"js{(new Date().getMinutes()).toString()}"</span>
+}</code></pre>
+<h3 id="inline-if">inline if</h3>
+<pre><code class="lang-css">$<span class="hljs-keyword">color</span>-scheme: <span class="hljs-class"><span class="hljs-keyword">light</span>
+p{
+    color: (</span><span class="hljs-string">"$color-scheme"</span> == <span class="hljs-string">"light"</span> ? <span class="hljs-string">"black"</span> : <span class="hljs-string">"white"</span>);
+}</code></pre>
+<h3 id="get-style">get style</h3>
+<pre><code class="lang-css"><span class="hljs-selector-tag">p</span>{
+    <span class="hljs-attribute">color</span>: gs$ <span class="hljs-number">#d</span>iv1 (color);
+}</code></pre>
+<h3 id="rgb-to-hex">rgb to hex</h3>
+<pre><code class="lang-css"><span class="hljs-selector-tag">body</span> {
+    <span class="hljs-attribute">color</span>: #<span class="hljs-built_in">rgb</span>(255, 0, 0);
+}</code></pre>
+<p><strong>Usage</strong>: <code>(&lt;condition&gt; ? &lt;if condition true reutrn this&gt; : &lt;else return this&gt;)</code></p>
+<h3 id="each">each</h3>
+<pre><code class="lang-css">$tags: h1:hover | p
+each($<span class="hljs-class">tags </span>{
+<span class="hljs-symbol">    color:</span> orange;
+})
+each(p:hover | a:<span class="hljs-class">active </span>{
+<span class="hljs-symbol">    color:</span> red;
+})</code></pre>
+<h3 id="string-functions">String Functions</h3>
+<h4 id="upper-lower">upper, lower</h4>
+<pre><code class="lang-css"><span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">::after</span>{
+    <span class="hljs-attribute">content</span>: <span class="hljs-string">"lower(HELLO) upper(world)"</span>;
+}</code></pre>
+<h4 id="escape">escape</h4>
+<p>Escapes the string within the quotation marks.</p>
+<pre><code class="lang-css"><span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">::after</span>{
+    <span class="hljs-attribute">content</span>: <span class="hljs-string">"e('Hello World')"</span>;
+}</code></pre>
+</div>
+</div>
+<script>
+    let navbar = document.getElementById("nav");
+    const navplaceholder = document.getElementById("navplaceholder");
+    navbar.style.width=window.getComputedStyle(navplaceholder).width;
+    navbar.style.height="100vh";
+    window.addEventListener("resize", () => {
+        navbar.style.width=window.getComputedStyle(navplaceholder).width;
+        navbar.style.height="100vh";
+    });
+</script>
+</body>
+</html>

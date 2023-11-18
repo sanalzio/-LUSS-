@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2048" height="2048" viewBox="0 0 2048 2048">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #282828;
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        font-size: 375px;
+        fill: #8a2be2;
+        text-anchor: middle;
+        font-family: "Source Sans Pro";
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <path id="Polygon_1" data-name="Polygon 1" class="cls-1" d="M1023.91,2048.27L136.962,1536.13V511.867L1023.91-.267l886.94,512.134V1536.13Z"/>
+  <text id="_LUSS_" data-name="{LUSS}" class="cls-2" transform="translate(1024.002 1171.995) scale(1.442)"><tspan x="0">{LUSS}</tspan></text>
+</svg>
