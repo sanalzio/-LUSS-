@@ -266,8 +266,7 @@ for (let ein = 0; ein < lussels.length; ein++) {
 const scriptels = document.getElementsByTagName("style");
 for (let ein = 0; ein < scriptels.length; ein++) {
 	const thisStyleElement = scriptels[ein];
-    if (thisStyleElement.getAttribute("type") && thisStyleElement.getAttribute("type")!="luss") {continue;}
-    if(!thisStyleElement.getAttribute("type")) {continue;}
+    if (thisStyleElement.getAttribute("luss")==null) {continue;}
     if (!thisStyleElement.innerHTML || !thisStyleElement.innerText) {continue;}
     var styleElement = document.createElement("style");
     styleElement.textContent = main(thisStyleElement.innerHTML.toString().split("\n"));
