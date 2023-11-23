@@ -29,6 +29,9 @@ A CSS framework that enables you to easily organize the style of a web page.
     - [rgb to hex](#rgb-to-hex)
     - [each](#each)
     - [interval](#interval)
+    - [New Pseudo-classes](#new-pseudo-classes)
+      - [inner](#inner)
+      - [outer](#outer)
     - [String Functions](#string-functions)
       - [upper, lower](#upper-lower)
       - [escape](#escape)
@@ -44,7 +47,7 @@ A CSS framework that enables you to easily organize the style of a web page.
 ## 🚀 Usage
 - Create a new `<style>`  tag in the following format and write the code inside it:
     ```html
-    <style type="luss">
+    <style luss>
         /* Codes */
     </style>
     ```
@@ -194,6 +197,24 @@ each(p:hover | a:active {
 interval(body $1000 {
     color: $randomColor;
 })
+```
+
+### New Pseudo-classes
+#### inner
+```css
+a::inner{
+    content: "<p>Hello</p>";
+    color: $randomColor;
+}
+```
+
+[Back To Top ⬆](#📋-table-of-contents)
+#### outer
+```css
+a::outer{
+    content: "<body><p>Hello</p></body>";
+    color: $randomColor;
+}
 ```
 
 [Back To Top ⬆](#📋-table-of-contents)

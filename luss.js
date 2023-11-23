@@ -1,9 +1,10 @@
 let definitions = {};
-function main(thislines) {
+function lussmain(thislines) {
     let tlines = thislines;
     let out = "";
     let lastcondition = false;
     let incon = false;
+    for (let ein = 0; ein < tlines.length; ein++) {tlines[ein] = tlines[ein].trimStart().replace("\r", "");}
     for (let ein = 0; ein < tlines.length; ein++) {
         let line = tlines[ein].trimStart().replace("\r", "");
         let arg = line.split(" ");
@@ -86,7 +87,7 @@ function main(thislines) {
                 }
             }
         }
-        matchs = line.match(/e\([\s\S]*?\)/g);
+        matchs = line.match(/e\(.*?\)/g);
         if (matchs) {
             for (let thindex = 0; thindex < matchs.length; thindex++) {
                 const th = matchs[thindex];
@@ -95,7 +96,7 @@ function main(thislines) {
                 }
             }
         }
-        matchs = line.match(/gs\$.*?\([\s\S]*?\)/g);
+        matchs = line.match(/gs\$.*?\(.*?\)/g);
 		if (matchs) {
 			for (let thindex = 0; thindex < matchs.length; thindex++) {
 				const th = matchs[thindex];
@@ -104,7 +105,7 @@ function main(thislines) {
                 editLine(line.replace(th, eval("window.getComputedStyle(document.querySelector(\""+thselector+"\"))."+thstyle).toString()))
 			}
 		}
-		matchs = line.match(/random\([\s\S]*?\)/g);
+		matchs = line.match(/random\(.*?\)/g);
 		if (matchs) {
 			for (let thindex = 0; thindex < matchs.length; thindex++) {
 				const th = matchs[thindex];
@@ -112,7 +113,7 @@ function main(thislines) {
 				editLine(line.replace(th, (Math.floor(Math.random() * Number(thcon.split(",")[1].trimStart().trimEnd())) + Number(thcon.split(",")[0].trimStart().trimEnd())).toString()));
 			}
 		}
-		matchs = line.match(/date\([\s\S]*?\)/g);
+		matchs = line.match(/date\(.*?\)/g);
 		if (matchs) {
 			for (let thindex = 0; thindex < matchs.length; thindex++) {
 				const th = matchs[thindex];
@@ -123,35 +124,35 @@ function main(thislines) {
 				}
 			}
 		}
-		matchs = line.match(/js\{[\s\S]*?\}/g);
+		matchs = line.match(/js\{.*?\}/g);
 		if (matchs) {
 			for (let thindex = 0; thindex < matchs.length; thindex++) {
 				const th = matchs[thindex];
 				editLine(line.replace(th, eval(th.slice(3, -1))))
 			}
 		}
-		matchs = line.match(/upper\([\s\S]*?\)/g);
+		matchs = line.match(/upper\(.*?\)/g);
 		if (matchs) {
 			for (let thindex = 0; thindex < matchs.length; thindex++) {
 				const th = matchs[thindex];
 				editLine(line.replace(th, th.slice(6, th.length - 1).toUpperCase()))
 			}
 		}
-        matchs = line.match(/lower\([\s\S]*?\)/g);
+        matchs = line.match(/lower\(.*?\)/g);
 		if (matchs) {
 			for (let thindex = 0; thindex < matchs.length; thindex++) {
 				const th = matchs[thindex];
 				editLine(line.replace(th, th.slice(6, th.length - 1).toLowerCase()))
 			}
 		}
-		matchs = line.match(/\$\[[\s\S]*?\]/g);
+		matchs = line.match(/\$\[.*?\]/g);
 		if (matchs) {
 			for (let thindex = 0; thindex < matchs.length; thindex++) {
 				const th = matchs[thindex];
 				editLine(line.replace(th, "calc("+th.slice(2, th.length - 1)+")"))
 			}
 		}
-		matchs = line.match(/#rgb\([\s\S]*?\)/g);
+		matchs = line.match(/#rgb\(.*?\)/g);
 		if (matchs) {
 			for (let thindex = 0; thindex < matchs.length; thindex++) {
 				const th = matchs[thindex];
@@ -166,7 +167,7 @@ function main(thislines) {
 				editLine(line.replace(th, hexColor.toUpperCase()))
 			}
 		}
-        matchs = line.match(/\([\s\S]*?\?[\s\S]*?\:[\s\S]*?\)/g);
+        matchs = line.match(/\(.*?\?.*?\:.*?\)/g);
 		if (matchs) {
 			for (let thindex = 0; thindex < matchs.length; thindex++) {
 				const th = matchs[thindex];
@@ -181,7 +182,7 @@ function main(thislines) {
 		}
         matchs = line.match(/each\(.*?\{/g);
         if (matchs) {
-            let tmatchs = tlines.join("\n").match(/each\([^)]*\{[\s\S]*?\}\)/g);
+            let tmatchs = tlines.join("\n").match(/each\([\s\S]*?\{[\s\S]*?\}\)/g);
             if (tmatchs) {
                 for (let thindex = 0; thindex < tmatchs.length; thindex++) {
                     const th = tmatchs[thindex];
@@ -189,13 +190,55 @@ function main(thislines) {
                     const thselarray = thcon.split("{")[0].trimEnd().trimStart().split("|");
                     thselarray.forEach(css => {
                         const modifiedTh = css+"{" + th.split("{").slice(1).join("{").slice(0, -1);
-                        out += main(modifiedTh.split("\n"));
+                        out += lussmain(modifiedTh.split("\n"));
                     });
                     tlines = tlines.join("\n").replace(th, "").split("\n")
                     delLine();
                 }
             }
             delLine();
+        }
+        matchs = line.match(/.*?::inner.*?/g);
+        if (matchs) {
+            const thselector = line.split("::inner")[0];
+            let tmatchs = tlines.join("\n").match(eval("/"+line.replace("{", "")+"[\\s\\S]*?\\{[\\s\\S]*?\\}/g"));
+            if (tmatchs) {
+                for (let thindex = 0; thindex < tmatchs.length; thindex++) {
+                    let th = tmatchs[thindex];
+                    const thcon = th.split("{")[1].slice(0, -1);
+                    const thincon = thcon.match(/content\s*?:\s*?"[\s\S]*?";|content\s*?:\s*?'[\s\S]*?';/g);
+                    if (thincon) {
+                        document.querySelectorAll(thselector).forEach(element => {
+                            const incon = eval(thincon[0].split(":").slice(1).join(":"));
+                            element.innerHTML = incon;
+                        });
+                        th=th.replace(thincon[0], "");
+                    }
+                    tlines = tlines.join("\n").replace(th, th.replace("::inner", " > *")).split("\n");
+                }
+            }
+            line = line.replace("::inner", " > *")
+        }
+        matchs = line.match(/.*?::outer.*?/g);
+        if (matchs) {
+            const thselector = line.split("::outer")[0];
+            let tmatchs = tlines.join("\n").match(eval("/"+line.replace("{", "")+"[\\s\\S]*?\\{[\\s\\S]*?\\}/g"));
+            if (tmatchs) {
+                for (let thindex = 0; thindex < tmatchs.length; thindex++) {
+                    let th = tmatchs[thindex];
+                    const thcon = th.split("{")[1].slice(0, -1);
+                    const thincon = thcon.match(/content\s*?:\s*?"[\s\S]*?";|content\s*?:\s*?'[\s\S]*?';|content\s*?:\s*?\`[\s\S]*?\`;/g);
+                    if (thincon) {
+                        document.querySelectorAll(thselector).forEach(element => {
+                            const incon = eval(thincon[0].split(":").slice(1).join(":"));
+                            element.outerHTML = incon;
+                        });
+                        th=th.replace(thincon[0], "");
+                    }
+                    tlines = tlines.join("\n").replace(th, th.replace("::outer", "")).split("\n");
+                }
+            }
+            line = line.replace("::outer", "")
         }
         matchs = line.match(/interval\(.*?\{/g);
         if (matchs) {
@@ -210,7 +253,7 @@ function main(thislines) {
                     setInterval(() => {
                         const targetElement = document.querySelector(thsel);
                         if (targetElement) {
-                            const styleContent = main(modifiedTh.split('\n')).trim().replaceAll("\n", "");
+                            const styleContent = lussmain(modifiedTh.split('\n')).trim().replaceAll("\n", "");
                             targetElement.style = styleContent;
                         }
                     }, Number(thms));
@@ -258,7 +301,7 @@ for (let ein = 0; ein < lussels.length; ein++) {
 			.then((response) => response.text())
 			.then((content) => {
 				var styleElement = document.createElement("style");
-                styleElement.textContent = main(content.split("\n"));
+                styleElement.textContent = lussmain(content.split("\n"));
                 document.head.appendChild(styleElement);
 			});
 	}
@@ -269,6 +312,9 @@ for (let ein = 0; ein < scriptels.length; ein++) {
     if (thisStyleElement.getAttribute("luss")==null) {continue;}
     if (!thisStyleElement.innerHTML || !thisStyleElement.innerText) {continue;}
     var styleElement = document.createElement("style");
-    styleElement.textContent = main(thisStyleElement.innerHTML.toString().split("\n"));
+    styleElement.textContent = lussmain(thisStyleElement.innerHTML.toString().split("\n"));
     document.head.appendChild(styleElement);
+}
+function luss(content) {
+    lussmain(content.split("\n"));
 }
