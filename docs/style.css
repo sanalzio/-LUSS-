@@ -26,7 +26,7 @@ pre{
     background-color: #292D34;
     padding: 1em;
     border-radius: 0.3em;
-    /* color: #E16D75; */
+    color: #E16D75;
     overflow: auto;
 }
 
@@ -34,7 +34,7 @@ code{
     background-color: #292D34;
     padding: 1em;
     border-radius: 0.3em;
-    /* color: #E16D75; */
+    color: #E16D75;
     overflow: auto;
 }
 
@@ -99,4 +99,75 @@ img{
 #nav > li > a {
     text-decoration: none;
     font-weight: 10;
+}
+
+#headim{
+    background: #8a2be2;
+    color: #282828;
+    height: 15vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#headim > h1 {
+    display: inline;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 3em;
+    margin: 0;
+    padding: 0;
+}
+
+#mybody{
+    display: flex;
+    flex-direction: row;
+    width: 90vw;
+    margin: auto;
+    margin-top: 3rem;
+    padding: 3rem;
+    justify-content: space-between;
+}
+
+#myIframe{
+    width: 49%;
+    overflow: auto;
+    border-radius: 1rem;
+}
+
+#editor{
+    width: 49%;
+    position: relative;
+}
+
+#display{
+    width: 100%;
+    height: 100%;
+    font-family: 'Source Code Pro', monospace;
+    white-space: pre;
+    overflow: hidden;
+    background: #292D34;
+    border-radius: 0.3rem;
+}
+
+#cedi{
+    width: 100%;
+    height: 100%;
+    font-family: 'Source Code Pro', monospace;
+    position: absolute;
+    border-width: 0;
+    resize: none;
+    background: rgba(0, 0, 0, 0);
+    color: rgba(0, 0, 0, 0);
+    caret-color: hotpink;
+    padding: 0;
+    overflow: auto;
+    white-space: pre;
+}
+#cedi::selection{
+    background: #8a2be2;
+    color: #f2f2f2;
+}
+#cedi:focus {
+    outline: none;
 }

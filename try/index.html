@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script defer src="../luss.js"></script>
+    <script type="module" defer src="../luss.js"></script>
     <!-- <link rel="luss" href="style.luss"> -->
     <style luss>
-        body::outer {
-            content: "<body><p>Hello</p></body>";
-            color: $randomColor;
+        $success: green;
+        h1 {
+            color: $success;
+        }
+
+        p {
+            color: $success;
         }
     </style>
 </head>

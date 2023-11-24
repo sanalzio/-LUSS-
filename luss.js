@@ -1,5 +1,5 @@
 let definitions = {};
-function lussmain(thislines) {
+export function lussmain(thislines) {
     let tlines = thislines;
     let out = "";
     let lastcondition = false;
@@ -19,7 +19,7 @@ function lussmain(thislines) {
             let desen = /`.*?`/g;
             let eslesmeler = line.match(desen);
             if (eslesmeler) {
-                for (var i = 0; i < eslesmeler.length; i++) {
+                for (let i = 0; i < eslesmeler.length; i++) {
                     eslesme=eslesmeler[i]
                     if(eslesme.slice(1, eslesme.length-1)===variable) {
                         return true
@@ -29,7 +29,7 @@ function lussmain(thislines) {
             desen = /'.*?'/g;
             eslesmeler = line.match(desen);
             if (eslesmeler) {
-                for (var i = 0; i < eslesmeler.length; i++) {
+                for (let i = 0; i < eslesmeler.length; i++) {
                     eslesme=eslesmeler[i]
                     if(eslesme.slice(1, eslesme.length-1)===variable) {
                         return true
@@ -39,7 +39,7 @@ function lussmain(thislines) {
             desen = /".*?"/g;
             eslesmeler = line.match(desen);
             if (eslesmeler) {
-                for (var i = 0; i < eslesmeler.length; i++) {
+                for (let i = 0; i < eslesmeler.length; i++) {
                     eslesme=eslesmeler[i]
                     if(eslesme.slice(1, eslesme.length-1)===variable) {
                         return true
@@ -287,12 +287,6 @@ function lussmain(thislines) {
     }
     return out
 }
-
-function convertToAbsoluteUrl(relativePath) {
-	let baseUrl = window.location.href.split("/").slice(0, window.location.href.split("/").length-1).join("/");
-	let absoluteUrl = new URL(relativePath, baseUrl).href;
-	return absoluteUrl;
-}
 const lussels = document.getElementsByTagName("link");
 for (let ein = 0; ein < lussels.length; ein++) {
 	const thisLussElement = lussels[ein];
@@ -300,7 +294,7 @@ for (let ein = 0; ein < lussels.length; ein++) {
 		fetch(thisLussElement.href)
 			.then((response) => response.text())
 			.then((content) => {
-				var styleElement = document.createElement("style");
+				let styleElement = document.createElement("style");
                 styleElement.textContent = lussmain(content.split("\n"));
                 document.head.appendChild(styleElement);
 			});
@@ -311,10 +305,12 @@ for (let ein = 0; ein < scriptels.length; ein++) {
 	const thisStyleElement = scriptels[ein];
     if (thisStyleElement.getAttribute("luss")==null) {continue;}
     if (!thisStyleElement.innerHTML || !thisStyleElement.innerText) {continue;}
-    var styleElement = document.createElement("style");
+    let styleElement = document.createElement("style");
     styleElement.textContent = lussmain(thisStyleElement.innerHTML.toString().split("\n"));
     document.head.appendChild(styleElement);
 }
-function luss(content) {
-    lussmain(content.split("\n"));
+export function luss(content) {
+    let styleElement = document.createElement("style");
+    styleElement.textContent = lussmain(content.split("\n"));
+    document.head.appendChild(styleElement);
 }
