@@ -251,7 +251,7 @@ a::after{
 ### luss function
 It adds the 'luss' style to the page.
 ```js
-import { luss } from "./luss.js"
+import { luss } from "https://rawcdn.githack.com/sanalzio/-LUSS-/master/luss.js"
 luss(`
 
 $success: green
@@ -268,7 +268,7 @@ body{
 ### lussmain function
 It compiles the specified 'luss' code and returns the compiled CSS code.
 ```js
-import { lussmain } from "./luss.js"
+import { lussmain } from "https://rawcdn.githack.com/sanalzio/-LUSS-/master/luss.js"
 console.log(lussmain(`
 
 $success: green
