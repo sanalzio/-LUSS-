@@ -1,173 +1,173 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
-body{
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #282828;
-    font-size: 2vh;
-    overflow-x: hidden;
-    width: 100vw;
-    height: 100vh;
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap");
+body {
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #282828;
+	font-size: 2vh;
+	overflow-x: hidden;
+	width: 100vw;
+	height: 100vh;
 }
-html{
-    color-scheme: dark;
+html {
+	color-scheme: dark;
 }
 
-.markdown-body{
-    background: #FA7268;
-    color: black;
-    color-scheme: light;
+.markdown-body {
+	background: #fa7268;
+	color: black;
+	color-scheme: light;
 }
 
 a {
-    color: black;
+	color: black;
 }
 
-pre{
-    background-color: #292D34;
-    padding: 1em;
-    border-radius: 0.3em;
-    color: #E16D75;
-    overflow: auto;
+pre {
+	background-color: #292d34;
+	padding: 1em;
+	border-radius: 0.3em;
+	color: #e16d75;
+	overflow: auto;
 }
 
-code{
-    background-color: #292D34;
-    padding: 1em;
-    border-radius: 0.3em;
-    color: #E16D75;
-    overflow: auto;
+code {
+	background-color: #292d34;
+	padding: 1em;
+	border-radius: 0.3em;
+	color: #e16d75;
+	overflow: auto;
 }
 
 .code > svg {
-    position: absolute;
-    padding: 0.5em;
-    cursor: pointer;
+	position: absolute;
+	padding: 0.5em;
+	cursor: pointer;
 }
 .code > svg:active {
-    cursor:default;
+	cursor: default;
 }
-img{
-    background: transparent;
-}
-
-#waves{
-    margin: 0;
-    width: 100%;
-    box-shadow: 0px 1em #FA7268;
+img {
+	background: transparent;
 }
 
-#carbon{
-    width: 30%;
-    margin: auto;
-}
-#carbon > img{
-    width: 100%;
+#waves {
+	margin: 0;
+	width: 100%;
+	box-shadow: 0px 1em #fa7268;
 }
 
-#logo{
-    width: 20%;
+#carbon {
+	width: 30%;
+	margin: auto;
+}
+#carbon > img {
+	width: 100%;
 }
 
-#PageHead{
-    text-align: center;
-    font-family: 'Source Code Pro', monospace;
-    color:#8a2be2;
-    font-size: 3em;
+#logo {
+	width: 20%;
 }
 
-#navplaceholder{
-    flex: 1;
+#PageHead {
+	text-align: center;
+	font-family: "Source Code Pro", monospace;
+	color: #8a2be2;
+	font-size: 3em;
 }
 
-#nav{
-    position: fixed;
-    flex: 1;
-    background-color: #8a2be2;
-    overflow:auto;
+#navplaceholder {
+	flex: 1;
 }
 
-#doc{
-    flex: 3.5;
-    padding: 3rem;
+#nav {
+	position: fixed;
+	flex: 1;
+	background-color: #8a2be2;
+	overflow: auto;
 }
 
-#cakmabody{
-    display: flex;
-    flex-direction: row;
+#doc {
+	flex: 3.5;
+	padding: 3rem;
+}
+
+#cakmabody {
+	display: flex;
+	flex-direction: row;
 }
 
 #nav > li > a {
-    text-decoration: none;
-    font-weight: 10;
+	text-decoration: none;
+	font-weight: 10;
 }
 
-#headim{
-    background: #8a2be2;
-    color: #282828;
-    height: 15vh;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#headim {
+	background: #8a2be2;
+	color: #282828;
+	height: 15vh;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 #headim > h1 {
-    display: inline;
-    font-family: 'Source Code Pro', monospace;
-    font-size: 3em;
-    margin: 0;
-    padding: 0;
+	display: inline;
+	font-family: "Source Code Pro", monospace;
+	font-size: 3em;
+	margin: 0;
+	padding: 0;
 }
 
-#mybody{
-    display: flex;
-    flex-direction: row;
-    width: 90vw;
-    margin: auto;
-    margin-top: 3rem;
-    padding: 3rem;
-    justify-content: space-between;
+#mybody {
+	display: flex;
+	flex-direction: row;
+	width: 90vw;
+	margin: auto;
+	margin-top: 3rem;
+	justify-content: space-between;
 }
 
-#myIframe{
-    width: 49%;
-    overflow: auto;
-    border-radius: 1rem;
+#myIframe {
+	width: 49%;
+	overflow: auto;
+	border-radius: 1rem;
 }
 
-#editor{
-    width: 49%;
-    position: relative;
+#editor {
+	width: 49%;
+	position: relative;
 }
 
-#display{
-    width: 100%;
-    height: 100%;
-    font-family: 'Source Code Pro', monospace;
-    white-space: pre;
-    overflow: hidden;
-    background: #292D34;
-    border-radius: 0.3rem;
+#display {
+	font-family: "Source Code Pro", monospace;
+	overflow: hidden;
+	background: #292d34;
+	border-radius: 0.3rem;
 }
 
-#cedi{
-    width: 100%;
-    height: 100%;
-    font-family: 'Source Code Pro', monospace;
-    position: absolute;
-    border-width: 0;
-    resize: none;
-    background: rgba(0, 0, 0, 0);
-    color: rgba(0, 0, 0, 0);
-    caret-color: hotpink;
-    padding: 0;
-    overflow: auto;
-    white-space: pre;
+#cedi {
+	font-family: "Source Code Pro", monospace;
+	position: absolute;
+	border-width: 0;
+	resize: none;
+	background: rgba(0, 0, 0, 0);
+	color: rgba(0, 0, 0, 0);
+	caret-color: hotpink;
+	overflow: auto;
 }
-#cedi::selection{
-    background: #8a2be2;
-    color: #f2f2f2;
+#cedi::selection {
+	background-color: rgba(255,255,255,0.2);
+}
+#cedi::-moz-selection {
+	background-color: rgba(255, 255, 255, 0.2);
 }
 #cedi:focus {
-    outline: none;
+	outline: none;
+}
+#cedi,#display {
+	width: 100%;
+	height: 100%;
+	white-space: pre;
+	padding: 0.5rem;
 }
