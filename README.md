@@ -2,7 +2,7 @@
 
 # {LUSS}
 
-> ⚠ **Warning**
+> [!WARNING]
 > With version 2.0, the library installation has undergone changes. For more information, visit the [Installation](#-installation) section
 
 ## 💻 Author
