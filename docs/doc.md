@@ -2,6 +2,9 @@
 
 # {LUSS}
 
+> ⚠ **Warning**
+> With version 2.0, the library installation has undergone changes. For more information, visit the [Installation](#-installation) section
+
 ## 💻 Author
 [**Sanalzio (me)**](https://sanalzio.github.io/)
 
@@ -35,11 +38,15 @@ A CSS framework that enables you to easily organize the style of a web page.
     - [String Functions](#string-functions)
       - [upper, lower](#upper-lower)
       - [escape](#escape)
+  - [For JavaScript](#for-javascript)
+    - [luss function](#luss-function)
+    - [lussmain function](#lussmain-function)
 
 ## ✔ Installation
+**The library has been modularized for use in JavaScript as well.**
 - Paste this tag into the head tag in your html code:
     ```html
-    <script defer src="https://cdn.jsdelivr.net/gh/sanalzio/-LUSS-@master/luss.js" type="module"></script>
+    <script defer src="https://rawcdn.githack.com/sanalzio/-LUSS-/master/luss.js" type="module"></script>
     ```
 
 [Back To Top ⬆](#📋-table-of-contents)
@@ -235,6 +242,42 @@ Escapes the string within the quotation marks.
 a::after{
     content: "e('Hello World')";
 }
+```
+
+[Back To Top ⬆](#📋-table-of-contents)
+
+## For JavaScript
+
+### luss function
+It adds the 'luss' style to the page.
+```js
+import { luss } from "./luss.js"
+luss(`
+
+$success: green
+
+body{
+    color: $success;
+}
+
+`);
+```
+
+[Back To Top ⬆](#📋-table-of-contents)
+
+### lussmain function
+It compiles the specified 'luss' code and returns the compiled CSS code.
+```js
+import { lussmain } from "./luss.js"
+console.log(lussmain(`
+
+$success: green
+
+body{
+    color: $success;
+}
+
+`));
 ```
 
 [Back To Top ⬆](#📋-table-of-contents)

@@ -1,4 +1,4 @@
-import { lussmain } from "https://cdn.jsdelivr.net/gh/sanalzio/-LUSS-@2.0/luss.js";
+import { lussmain } from "https://rawcdn.githack.com/sanalzio/-LUSS-/master/luss.js";
 let iframe = document.getElementById("myIframe");
 let editor2 = document.getElementById("cedi");
 editor2.value = `$success : green

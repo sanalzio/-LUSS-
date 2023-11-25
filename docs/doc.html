@@ -53,6 +53,11 @@
             </li>
             </ul>
             </li>
+            <li><a style="text-decoration: none;font-weight: 600;color:#8a2be2;" href="#for-javascript">For JavaScript</a><ul>
+            <li><a style="text-decoration: none;font-weight: 600;color:#8a2be2;" href="#luss-function">luss function</a></li>
+            <li><a style="text-decoration: none;font-weight: 600;color:#8a2be2;" href="#lussmain-function">lussmain function</a></li>
+            </ul>
+            </li>
             </ul>
             </li>
             </ul>
@@ -61,13 +66,18 @@
 </div>
 <div class="markdown-body" id="doc" style="color-scheme: light;color:azure;background-color: #282828;margin:auto;">
 <h1 id="-luss-" style="color:#8a2be2;">{LUSS}</h1>
+<blockquote class="markdown-alert markdown-alert-warning">
+    <p><strong style="color: #d29922;">⚠ Warning</strong>
+    With version 2.0, the library installation has undergone changes. For more information, visit the <a href="#-installation" style="font-weight: 600;color:#8a2be2;">Installation</a> section</p>
+</blockquote>
 <h2 id="-author">💻 Author</h2>
 <p><a href="https://sanalzio.github.io/" target="_blank" style="color: #f2f2f2;"><strong>Sanalzio (me)</strong></a></p>
 <h2 id="-description">💬 Description</h2>
 <p>A CSS framework that enables you to easily organize the style of a web page.</p>
 <h2 id="-installation">✔ Installation</h2>
+<p><strong>The library has been modularized for use in JavaScript as well.</strong></p>
 <ul>
-<li>Paste this tag into the head tag in your html code:<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">defer</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/gh/sanalzio/-LUSS-@master/luss.js" <span class="hljs-attr">type</span>=<span class="hljs-string">"module"</span></span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+<li>Paste this tag into the head tag in your html code:<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">defer</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://rawcdn.githack.com/sanalzio/-LUSS-/master/luss.js" <span class="hljs-attr">type</span>=<span class="hljs-string">"module"</span></span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
 </li>
 </ul>
 <h2 id="-usage">🚀 Usage</h2>
@@ -182,6 +192,31 @@ each(p:hover | a:<span class="hljs-class">active </span>{
 <pre><code class="lang-css"><span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">::after</span>{
     <span class="hljs-attribute">content</span>: <span class="hljs-string">"e('Hello World')"</span>;
 }</code></pre>
+<h2 id="for-javascript">For JavaScript</h2>
+<h3 id="luss-function">luss function</h3>
+<p>It adds the &#39;luss&#39; style to the page.</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { luss } <span class="hljs-keyword">from</span> <span class="hljs-string">"./luss.js"</span>
+luss<span class="hljs">(<span class="hljs-string">`
+
+$success: green
+
+body{
+    color: $success;
+}
+
+`</span>)</span>;</code></pre>
+<h3 id="lussmain-function">lussmain function</h3>
+<p>It compiles the specified &#39;luss&#39; code and returns the compiled CSS code.</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { lussmain } <span class="hljs-keyword">from</span> <span class="hljs-string">"./luss.js"</span>
+console.log(<span class="hljs">lussmain(<span class="hljs-string">`
+
+$success: green
+
+body{
+    color: $success;
+}
+
+`</span>)</span>);</code></pre>
 
 </div>
 </div>
